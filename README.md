@@ -136,3 +136,36 @@ Quando você usa o seu computador para rodar um código (como o Live Server), el
 #### 4. Hospedagem Web Tradicional
 * **Hostinger**
 * **HostGator**
+
+# Desafio 10
+## Operadores de comparação
+
+## Diferença do == e ===
+* `==` (Igualdade Ampla): Converte os tipos dos dados para um formato em comum antes de realizar a comparação. Exemplo: `5 == "5"` resulta em `true`.
+* `===` (Igualdade Estrita): Compara tanto o valor quanto o tipo do dado. Não há conversão. Exemplo: `5 === "5"` resulta em `false`.
+
+## Diferença de != e !==
+* `!=` (Desigualdade Ampla): Retorna true se os valores forem diferentes, realizando a conversão de tipos antes de avaliar. Exemplo: `5 != "5"` resulta em `false`.
+* `!==` (Desigualdade Estrita): Retorna true se os valores ou os tipos forem diferentes. Exemplo: `5 !== "5"` resulta em `true`.
+
+## Coerção de Tipos
+Em JavaScript é um processo manual ou automático em que o valor é convertido para outro tipo de dado (como transformar uma string em número).
+
+Existem duas maneiras de ocorrer esse processo:
+* **Implícita**: Feita de forma automática pelo motor do JavaScript durante operações ou comparações. Exemplo: `"5" * 2` converte a string para número automaticamente.
+
+* **Explícita**: Feita intencionalmente pelo programador usando funções como `Number()`, `String()` ou `Boolean()`.
+
+## Como ocorre a comparação > e <
+
+O JavaScript compara strings usando a ordem lexicográfica (como em um dicionário) caractere por caractere, com base nos valores numéricos da tabela Unicode (ou UTF-16).
+
+1. Ele analisa o primeiro caractere de cada string.
+
+2. Se forem diferentes, o que tiver o menor valor Unicode é considerado "menor" (<).
+
+3. Se forem iguais, ele avança para o próximo caractere até encontrar uma diferença ou acabar uma das strings.
+
+* **Nota**: Letras maiúsculas vêm antes das minúsculas na tabela Unicode (portanto, `"Z" < "a"` é verdadeiro). Exemplo:  `"apple" < "banana"` resulta em true porque 'a' vem antes de 'b'.
+
+![This is an alt text.](https://i.postimg.cc/KjNyqCHJ/Captura-de-tela-2026-09-18-165242.png)
