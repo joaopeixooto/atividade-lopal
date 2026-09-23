@@ -227,3 +227,58 @@ Em JavaScript, `NaN === NaN` retorna `false` porque o padrão matemático IEEE 7
 * **Checagem direta:** Ele retorna `true` apenas se o item avaliado for o primitivo numérico `NaN`.
 
 ![Teste prático.](https://i.postimg.cc/13YyfS9r/Captura-de-tela-2026-09-20-173123.png)
+
+# Desafio 12
+
+#### Operador Ternário
+
+O operador ternário é o único operador do JavaScript que recebe três operandos, funcionando como um atalho compacto para a estrutura condicional `if...else`.
+
+Sua sintaxe funciona da seguinte forma:
+
+* `condição`: Uma expressão cujo resultado é avaliado como verdadeiro (truthy) ou falso (falsy).
+
+* `?`: Separa a condição dos resultados.
+
+* `valorSeVerdadeiro`: O valor retornado se a condição for verdadeira.
+
+* `:`: Separa o resultado verdadeiro do falso.
+
+* `valorSeFalso`: O valor retornado se a condição for falsa.
+
+### A diferença entre Expressão e Instrução (Statement)
+
+Para entender por que o ternário funciona onde o `if` falha, precisamos entender a diferença fundamental entre esses dois conceitos:
+
+|Característica|Expressão (Expression)|Instrução (Statement)|
+|-|-|-|
+|**Definição**| Qualquer pedaço de código que **produz um valor**.| Uma ação ou comando executado pelo programa.|
+|**Retorno**| Sempre resulta em algo que pode ser guardado ou passado adiante.| Não produz um valor por si mesma, apenas realiza uma ação|
+|**Exemplos**|`5 + 2`, `"Olá"`, `idade >= 18`, `ternario ? sim : nao`|`if ... else`, `for`, `while`, `const x = 5`
+
+### Por que o ternário funciona no `console.log` e o `if` não?
+
+O `console.log()` e as template strings (interpolações com `${}`) exigem **valores** para funcionar.
+
+Como o **operador ternário é uma expressão**, ele calcula a condição e se transforma imediatamente em um único valor final. Esse valor é então injetado diretamente na função ou no texto.
+
+Por outro lado, o `if` **é uma instrução** (um bloco de controle). Ele dita os caminhos que o código deve seguir, mas não "vale" nada sozinho. Você não pode passar uma estrutura de controle como argumento para uma função ou colocá-la dentro de uma string porque o JavaScript não consegue transformar um bloco `if` em um dado concreto.
+
+## Ternários Aninhados
+
+Para fazer **ternários aninhados** (ou encadeados), você deve substituir o `valorSeVerdadeiro` ou o `valorSeFalso` por um novo operador ternário completo.
+
+Na prática, eles funcionam exatamente como uma estrutura `if...else if...else` .
+
+#### Sintaxe Básica
+
+A forma mais comum e legível de aninhar ternários é colocar a nova condição na estrutura do "senão" (`valorSeFalso`):
+
+```
+condicao1 ? valor1
+: condicao2 ? valor2
+: condicao3 ? valor3
+: valorPadrao;
+```
+
+![Teste prático](https://i.postimg.cc/g0L5KXhn/Captura-de-tela-2026-09-20-192346.png)
