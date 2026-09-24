@@ -282,3 +282,50 @@ condicao1 ? valor1
 ```
 
 ![Teste prático](https://i.postimg.cc/g0L5KXhn/Captura-de-tela-2026-09-20-192346.png)
+
+# Desafio 13
+#### Switch
+O `switch` em JavaScript é uma estrutura de controle de fluxo utilizada para avaliar uma expressão e comparar seu valor com múltiplas cláusulas `case`. Ele serve como uma alternativa mais limpa e legível a múltiplos blocos de `if ... else if`.
+
+Internamente, o `switch` utiliza a comparação de igualdade estrita (operador `===`). Isso significa que, para um `case` corresponder ao valor avaliado, tanto o valor quanto o tipo de dado devem ser exatamente iguais, porque não há nenhuma conversão.
+
+## Sintaxe Básica, Break e Default
+```
+switch (expressao) {
+    case valor1:
+        // Bloco de código executado se expressao === valor1
+        break;
+    case valor2:
+        // Bloco de código executado se expressao === valor2
+        break;
+    default:
+        // Bloco de código executado se nenhum case for correspondido
+}
+```
+
+## Papel do `break`e do `default`
+
+* `break`: É uma palavra-chave utilizada para encerrar a execução de um bloco `case`. Quando o interpretador encontra o `break`, ele sai imediatamente do `switch` e continua a execução do código que vem depois dele. Se você omitir o `break`, o JavaScript continuará executando os códigos dos próximos casos sequencialmente.
+
+* `default`: É um bloco opcional executado quando nenhum dos casos (`case`) corresponde ao valor da expressão avaliada. Ele funciona de forma idêntica ao último `else` em uma estrutura `if / else`.
+
+## O que é Fall-Through?
+O fall-through (ou "efeito cascata") acontece quando você omite intencionalmente ou acidentalmente a palavra-chave `break` ao final de um `case`. Sem o `break`, o interpretador JavaScript "cai" para o próximo `case` da lista e executa o código dele, independentemente de o valor corresponder ou não à expressão.
+
+Embora possa causar bugs se esquecido, o fall-through pode ser usado de forma útil para agrupar múltiplos casos que devem executar a mesma ação:
+
+```
+const fruta = 'maçã'
+
+switch (fruta) {
+    case 'laranja':
+    case 'limão':
+    case 'tangerina':
+        console.log("Esta é uma fruta cítrica");
+        break; // O break aqui interrompe o fall-through para os três casos acima
+    default:
+        console.log("Esta não é uma fruta cítrica");
+}
+```
+
+![Atividade Prática](https://i.postimg.cc/hGK747qH/Captura-de-tela-2026-09-21-202742.png)
