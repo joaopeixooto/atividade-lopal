@@ -329,3 +329,29 @@ switch (fruta) {
 ```
 
 ![Atividade Prática](https://i.postimg.cc/hGK747qH/Captura-de-tela-2026-09-21-202742.png)
+
+# Desafio 14
+
+### Curto-circuito
+
+A avaliação de curto-circuito (short-circuit) ocorre quando o JavaScript para de avaliar uma expressão lógica assim que o resultado final já pode ser determinado pelo primeiro valor, retornando o próprio operando original e não um booleano.
+
+### O que `||` e `&&` realmente retornam
+Em vez de apenas `true` ou `false`, esses operadores o valor exato de um dos lados da operação:
+
+* **Operador `&&` (E lógico)**: Avalia o primeiro operando. Se falso (_falsy_ como `false`, `0`, `""`, `null`, `undefined`, `NaN`), ele **retorna esse primeiro valor** e para por aí. Se for verdadeiro (_truthy_), ele **retorna o segundo operando**.
+
+* **Operador `||` (OU lógico)**: Avalia o primeiro operando. Se ele for verdadeiro (_truthy_), ele **retorna esse primeiro valor** e para. Se for falso (_falsy_), ele **retorna o segundo operando**.
+
+## Operador coalescente nulo `??`
+O operador `??` verifica se o valor à esquerda é `null` ou `undefined`.
+* Se for `null` ou `undefined`, ele retorna o operando da direita.
+* Caso contrário, ele retorna o operando da esquerda.
+
+### Diferença entre `??` e `||`
+A diferença central está em como tratam outros valores considerados falsos (_falsy_) além de `null` e `undefined`, como o `0`, strings vazias (`""`) ou `false`.
+
+* O `||` substitui qualquer valor _falsy_ pelo padrão da direita. Isso gera bugs se `0` ou `""` forem valores válidos para o seu código.
+* O `??` é estrito e só substitui se for `null` ou `undefined`.
+
+![Atividade Prática](https://i.postimg.cc/Kv6g3Ht0/Captura-de-tela-2026-09-21-211318.png)
