@@ -97,7 +97,7 @@ Como o programa e tudo o que ele precisa estão dentro do contêiner, o comporta
 
 # Desafio 9
 ## - O que é Live Server
-O live server é um pequeno servidor web local que atualiza automaticamente a página no navergador sempre que você salva alterações no código.
+O live server é um pequeno servidor web local que atualiza automaticamente a página no navegador sempre que você salva alterações no código.
 
 ## - Como funciona?
 * **Servidor local**: Ele cria um ambiente de teste no seu próprio computador (geralmente usando `localhost`) para rodar arquivos como HTML, CSS e JavaScript.
