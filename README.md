@@ -337,7 +337,7 @@ switch (fruta) {
 A avaliação de curto-circuito (short-circuit) ocorre quando o JavaScript para de avaliar uma expressão lógica assim que o resultado final já pode ser determinado pelo primeiro valor, retornando o próprio operando original e não um booleano.
 
 ### O que `||` e `&&` realmente retornam
-Em vez de apenas `true` ou `false`, esses operadores o valor exato de um dos lados da operação:
+Em vez de apenas `true` ou `false`, esses operadores retornam o valor exato de um dos lados da operação:
 
 * **Operador `&&` (E lógico)**: Avalia o primeiro operando. Se falso (_falsy_ como `false`, `0`, `""`, `null`, `undefined`, `NaN`), ele **retorna esse primeiro valor** e para por aí. Se for verdadeiro (_truthy_), ele **retorna o segundo operando**.
 
